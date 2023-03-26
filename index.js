@@ -7,9 +7,6 @@ const { noteRoute } = require('./route/notes.route');
 const { userRoute } = require('./route/user.route');
 const app = express();
 
-app.use("/",(req,res)=>{
-    res.send("hello")
-})
 app.use(cors())
 app.use(express.json())
 app.use("/user",userRoute)

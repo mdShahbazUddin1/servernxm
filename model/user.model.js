@@ -18,7 +18,7 @@ type:String,
 require:true,
   },
   age: {
-    type: Number,
+    type: String,
     require: true,
   },
 },{
