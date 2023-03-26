@@ -8,6 +8,10 @@ const { userRoute } = require('./route/user.route');
 const swaggerUi = require("swagger-ui-express");
 const swaggerJSDoc = require('swagger-jsdoc');
 const app = express();
+
+app.use("/",(req,res)=>{
+    res.send("hello")
+})
 app.use(cors())
 app.use(express.json())
 app.use("/user",userRoute)
@@ -31,6 +35,7 @@ const options = {
 
 const swaggerSpec = swaggerJSDoc(options);
 app.use("/documentations",swaggerUi.serve,swaggerUi.setup(swaggerSpec))
+
 app.use(auth);
 app.use("/note", noteRoute);
 
